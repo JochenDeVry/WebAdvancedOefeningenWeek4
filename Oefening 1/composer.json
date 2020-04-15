@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "tool\\": "src/tool/",
+      "worker\\": "src/worker/"
+    }
+  }
+}
