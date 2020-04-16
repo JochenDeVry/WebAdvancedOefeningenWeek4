@@ -1,8 +1,10 @@
 <?php
-print('line 2');
 if (!is_numeric($_GET['dag']) || !is_numeric($_GET['maand']) || !is_numeric($_GET['jaar'])){
     header("Location: invoer.html");
 }
+$dag = $_GET['dag'];
+$maand = $_GET['maand'];
+$jaar = $_GET['jaar'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,15 +14,18 @@ if (!is_numeric($_GET['dag']) || !is_numeric($_GET['maand']) || !is_numeric($_GE
 </head>
 <body>
     <?php
-        print('line 13');
-        require_once '/src/Util/Date.php';
-        print('line 17');
+        require_once 'vendor/autoload.php';
         use Util\Date;
-        print('line 19');
-        $date = new Date(1,1,2010);
-        print('line 21');
+        if ($dag == 0 && $maand == 0 && $jaar == 0){
+            $date = new Date();
+        }
+        elseif ($jaar == 0){
+            $date = new Date($dag, $maand);
+        }
+        else{
+            $date = new Date($dag, $maand, $jaar);
+        }
         $date->printMonth();
-        print('test');
     ?>
 </body>
 </html>

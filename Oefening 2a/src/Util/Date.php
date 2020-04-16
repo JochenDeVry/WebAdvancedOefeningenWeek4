@@ -7,33 +7,10 @@ class Date
     private $day;
     private $month;
     private $year;
-    private static $defaultDay = 1;
-    private static $defaultMonth = 1;
-    private static $defaultYear = 2008;
     private static $MONTHS = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','sep','nov','dec'];
 
-    public function __construct(int $day, int$month, int $year)
+    public function __construct(int $day = 1, int $month = 1, int $year = 2008)
     {
-        /*$arg_list = func_get_args();
-        $numargs = func_num_args();
-        if ($numargs == 0 ){
-            $this->day = self::$defaultDay;
-            $this->month = self::$defaultMonth;
-            $this->year = self::$defaultYear;
-        }
-        elseif ($numargs == 2){
-            $this->day = $arg_list[0];
-            $this->month = $arg_list[1];
-            $this->year = self::$defaultYear;
-        }
-        elseif ($numargs == 3){
-            $this->day = $arg_list[0];
-            $this->month = $arg_list[1];
-            $this->year = $arg_list[2];
-        }
-        else{
-            throw new \Exception("number of parameters for Date creation incorrect");
-        }*/
         $this->day = $day;
         $this->month = $month;
         $this->year = $year;
@@ -45,7 +22,6 @@ class Date
 
     public function printMonth(){
         print($this->day.'/'.self::$MONTHS[$this->month - 1].'/'.$this->year);
-        print('printmonth function');
     }
 
     public function getDay()
