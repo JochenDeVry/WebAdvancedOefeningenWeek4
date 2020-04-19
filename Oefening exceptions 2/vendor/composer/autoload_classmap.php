@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'textnode\\TextNode' => $baseDir . '/src/textnode/TextNode.php',
+    'textnode\\TextNodeException' => $baseDir . '/src/textnode/TextNodeException.php',
 );

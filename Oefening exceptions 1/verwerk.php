@@ -40,7 +40,7 @@ $jaar = $_GET['jaar'];
             }
             $date->printMonth();
         }
-        catch(Exception $e){
+        catch(\Util\DateException $e){
             print($e);
         }
     ?>

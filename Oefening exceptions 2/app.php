@@ -5,4 +5,9 @@ $n=textnode\TextNode::makeNode("a");
 $n->addNode("b");
 $n->addNode("c");
 $n->printAll();
-$n->printTextNodeAt(2);
+try{
+    $n->printTextNodeAt(5);
+}
+catch(\textnode\TextNodeException $e){
+    print($e);
+}
